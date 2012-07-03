@@ -27,6 +27,7 @@ module RailsAdmin
                   else
                   end
             redirect_to "/#!/#{url}"
+          end
         end
 
         register_instance_option :link_icon do
