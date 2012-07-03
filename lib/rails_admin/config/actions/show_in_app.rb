@@ -14,8 +14,19 @@ module RailsAdmin
 
         register_instance_option :controller do
           Proc.new do
-            redirect_to main_app.url_for(@object)
-          end
+            p @object
+            url = case @object
+                  when User 
+                    "users/#{@object.nickname}"
+                  when Post
+                    if @object.is_question?
+                      "questions/#{@object.id}"
+                    else
+                      "answers/#{@object.id}"
+                    end
+                  else
+                  end
+            redirect_to "/#!/#{url}"
         end
 
         register_instance_option :link_icon do
