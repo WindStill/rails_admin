@@ -49,7 +49,7 @@ module RailsAdmin
         li_stack = nodes.select{|n| n.parent.nil? || !n.parent.to_s.in?(nodes_stack.map{|c| c.abstract_model.model_name }) }.map do |node|
           %{
             <li data-model="#{node.abstract_model.to_param}">
-              <a class="pjax" href="#{url_for(:action => :index, :controller => 'rails_admin/main', :model_name => node.abstract_model.to_param)}">#{node.label_plural}</a>
+              <a class="pjax" href="/admin/#{node.abstract_model.to_param}">#{node.label_plural}</a>
             </li>
             #{navigation(nodes_stack, nodes_stack.select{|n| n.parent.to_s == node.abstract_model.model_name}, 1)}
           }.html_safe
