@@ -22,10 +22,10 @@
             = render :partial => 'layouts/rails_admin/secondary_navigation'
     .container-fluid
       .row-fluid
-        .span3
+        .span2
           .well.sidebar-nav
             %ul.nav.nav-list= main_navigation
-        .span9
+        .span10
           .row-fluid
             .content{:'data-pjax-container' => true}= render :template => 'layouts/rails_admin/pjax'
             
