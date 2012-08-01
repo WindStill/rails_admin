@@ -36,7 +36,6 @@ $(document).live 'rails_admin.dom_ready', ->
         $(input).children('.toggle').toggle('slow')
 
     # filtering-multiselect
-
     $('form [data-filteringmultiselect]').each ->
       $(this).filteringMultiselect $(this).data('options')
       if $(this).parents("#modal").length # hide link if we already are inside a dialog (endless issues on nested dialogs with JS)
