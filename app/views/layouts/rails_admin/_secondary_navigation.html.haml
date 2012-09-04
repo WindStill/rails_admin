@@ -5,6 +5,7 @@
   %li= link_to '每周精选', main_app.sift_statistics_path
   %li= link_to '提现审核', main_app.withdraw_statistics_path
   %li= link_to '在线用户', main_app.online_statistics_path
+  %li= link_to '用户技能标签', main_app.fake_tag_statistics_path
   %li= link_to '小号管理', main_app.fake_statistics_path
   - if main_app_root_path = (main_app.root_path rescue false)
     %li= link_to t('admin.home.name').capitalize, main_app_root_path
