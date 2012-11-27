@@ -5,11 +5,12 @@
     %meta{:content => "NONE,NOARCHIVE", :name => "robots"}
     = csrf_meta_tag
     = stylesheet_link_tag "rails_admin/rails_admin.css", :media => :all
-    = javascript_include_tag "application"
     = javascript_include_tag "rails_admin/rails_admin.js"
     :javascript
-      window.pusher = new Pusher("#{Pusher.key}"),
-      App.channel = pusher.subscribe("notify_#{current_user.id}");
+      App = {}
+      window.pusher = new Pusher("#{Pusher.key}");
+      pusher.subscribe("notify_#{current_user.id}");
+
   %body.rails_admin
     #loading.label.label-warning{:style => 'display:none; position:fixed; right:20px; bottom:20px; z-index:100000'} Loading...
     .navbar.navbar-fixed-top
@@ -28,5 +29,3 @@
         .span10
           .row-fluid
             .content{:'data-pjax-container' => true}= render :template => 'layouts/rails_admin/pjax'
-            
-    

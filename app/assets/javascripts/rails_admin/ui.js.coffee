@@ -51,6 +51,7 @@ $('.form-horizontal legend').live 'click', ->
 $(document).ready ->
   $(document).trigger('rails_admin.dom_ready')
 
+
 $(document).live 'pjax:end', ->
   $(document).trigger('rails_admin.dom_ready')
 
